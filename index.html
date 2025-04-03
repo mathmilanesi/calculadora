@@ -15,20 +15,24 @@
             align-items: center;
             height: 100vh;
             padding: 20px;
+            flex-direction: column;
         }
         .container {
             display: flex;
-            gap: 30px;
+            gap: 20px;
             flex-wrap: wrap;
             justify-content: center;
+            margin-top: 20px; /* Espaço extra no topo */
         }
         .card {
             background-color: #1e1e1e;
             border: none;
-            padding: 25px;
+            padding: 20px;
             border-radius: 10px;
             color: #fff;
             min-width: 320px;
+            width: 100%;
+            max-width: 400px; /* Largura máxima */
         }
         .table {
             color: #fff;
@@ -54,6 +58,24 @@
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+        /* Melhorando responsividade */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+                height: auto;
+            }
+            .container {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+            }
+            .card {
+                max-width: 100%;
+            }
+            .titulo {
+                font-size: 1.3em;
+            }
         }
     </style>
 </head>
