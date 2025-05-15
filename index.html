@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Calculadora de Preços</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
       background-color: #121212;
@@ -38,16 +38,41 @@
       margin-bottom: 10px;
     }
 
+    .input-group-text {
+      background-color: #444;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      padding: 0.25rem 0.4rem;
+      font-size: 0.7rem;
+      width: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .btn-custom {
       background-color: #28a745;
       color: white;
       width: 100%;
-      font-size: 1.1em;
-      padding: 10px;
+      font-size: 0.9em;
+      padding: 7px;
+    }
+    
+    .btn-ingressos {
+      background-color: #6f42c1;
+      color: white;
+      width: 100%;
+      font-size: 0.9em;
+      padding: 7px;
     }
 
     .btn-custom:hover {
       background-color: #218838;
+    }
+    
+    .btn-ingressos:hover {
+      background-color: #5a32a3;
     }
 
     .titulo {
@@ -137,19 +162,81 @@
       <h4 class="titulo"><i class="fas fa-shopping-cart"></i> Calculadora de Preços</h4>
       <div class="mt-3">
         <label>🛡️ Colete</label>
-        <input type="number" class="form-control" id="colete" value="0" />
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" id="colete" value="0" min="0" />
+          <span class="input-group-text" onclick="document.getElementById('colete').value = '0'">
+            <i class="fas fa-times"></i>
+          </span>
+          <span class="input-group-text" onclick="document.getElementById('colete').value = parseInt(document.getElementById('colete').value || 0) + 1">
+            <i class="fas fa-plus"></i>
+          </span>
+        </div>
+        
         <label>💣 C4</label>
-        <input type="number" class="form-control" id="c4" value="0" />
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" id="c4" value="0" min="0" />
+          <span class="input-group-text" onclick="document.getElementById('c4').value = '0'">
+            <i class="fas fa-times"></i>
+          </span>
+          <span class="input-group-text" onclick="document.getElementById('c4').value = parseInt(document.getElementById('c4').value || 0) + 1">
+            <i class="fas fa-plus"></i>
+          </span>
+        </div>
+        
         <label>🔗 Algema</label>
-        <input type="number" class="form-control" id="algema" value="0" />
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" id="algema" value="0" min="0" />
+          <span class="input-group-text" onclick="document.getElementById('algema').value = '0'">
+            <i class="fas fa-times"></i>
+          </span>
+          <span class="input-group-text" onclick="document.getElementById('algema').value = parseInt(document.getElementById('algema').value || 0) + 1">
+            <i class="fas fa-plus"></i>
+          </span>
+        </div>
+        
         <label>🎭 Capuz</label>
-        <input type="number" class="form-control" id="capuz" value="0" />
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" id="capuz" value="0" min="0" />
+          <span class="input-group-text" onclick="document.getElementById('capuz').value = '0'">
+            <i class="fas fa-times"></i>
+          </span>
+          <span class="input-group-text" onclick="document.getElementById('capuz').value = parseInt(document.getElementById('capuz').value || 0) + 1">
+            <i class="fas fa-plus"></i>
+          </span>
+        </div>
+        
         <label>🤐 Mordaça</label>
-        <input type="number" class="form-control" id="mordaca" value="0" />
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" id="mordaca" value="0" min="0" />
+          <span class="input-group-text" onclick="document.getElementById('mordaca').value = '0'">
+            <i class="fas fa-times"></i>
+          </span>
+          <span class="input-group-text" onclick="document.getElementById('mordaca').value = parseInt(document.getElementById('mordaca').value || 0) + 1">
+            <i class="fas fa-plus"></i>
+          </span>
+        </div>
+        
         <label>🎗 Corda</label>
-        <input type="number" class="form-control" id="corda" value="0" />
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" id="corda" value="0" min="0" />
+          <span class="input-group-text" onclick="document.getElementById('corda').value = '0'">
+            <i class="fas fa-times"></i>
+          </span>
+          <span class="input-group-text" onclick="document.getElementById('corda').value = parseInt(document.getElementById('corda').value || 0) + 1">
+            <i class="fas fa-plus"></i>
+          </span>
+        </div>
+        
         <label>📟 Tablet</label>
-        <input type="number" class="form-control" id="tablet" value="0" />
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" id="tablet" value="0" min="0" />
+          <span class="input-group-text" onclick="document.getElementById('tablet').value = '0'">
+            <i class="fas fa-times"></i>
+          </span>
+          <span class="input-group-text" onclick="document.getElementById('tablet').value = parseInt(document.getElementById('tablet').value || 0) + 1">
+            <i class="fas fa-plus"></i>
+          </span>
+        </div>
       </div>
       <button class="btn btn-custom mt-3" onclick="calcularTotal()">Calcular Total</button>
 
@@ -161,6 +248,38 @@
 
       <h5 class="mt-3 text-center" id="total">Total: R$0,00</h5>
       <h6 class="mt-2 text-center text-success" id="valorVendedor">Vendedor Recebe (30%): R$0,00</h6>
+    </div>
+
+    <!-- Calculadora de Ingressos -->
+    <div class="card p-4">
+      <h4 class="titulo"><i class="fas fa-ticket-alt"></i> Calculadora de Ingressos</h4>
+      <div class="mt-3">
+        <label>👨 Homens (R$5.000,00 cada)</label>
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" id="homens" value="0" min="0" />
+          <span class="input-group-text" onclick="document.getElementById('homens').value = '0'">
+            <i class="fas fa-times"></i>
+          </span>
+          <span class="input-group-text" onclick="document.getElementById('homens').value = parseInt(document.getElementById('homens').value || 0) + 1">
+            <i class="fas fa-plus"></i>
+          </span>
+        </div>
+        
+        <label>👩 Mulheres (R$3.500,00 cada)</label>
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" id="mulheres" value="0" min="0" />
+          <span class="input-group-text" onclick="document.getElementById('mulheres').value = '0'">
+            <i class="fas fa-times"></i>
+          </span>
+          <span class="input-group-text" onclick="document.getElementById('mulheres').value = parseInt(document.getElementById('mulheres').value || 0) + 1">
+            <i class="fas fa-plus"></i>
+          </span>
+        </div>
+      </div>
+      <button class="btn btn-ingressos mt-3" onclick="calcularIngressos()">Calcular Ingressos</button>
+      
+      <h5 class="mt-3 text-center" id="totalIngressos">Total Ingressos: R$0,00</h5>
+      <h6 class="mt-2 text-center text-info">Valor integral para a organização</h6>
     </div>
 
     <!-- Tabela de Preços -->
@@ -182,6 +301,8 @@
           <tr><td>🤐 Mordaça</td><td>R$6.000,00</td><td>R$5.000,00</td></tr>
           <tr><td>🎗 Corda</td><td>R$6.000,00</td><td>R$5.000,00</td></tr>
           <tr><td>📟 Tablet</td><td>R$9.000,00</td><td>R$8.000,00</td></tr>
+          <tr><td>🎟️ Ingresso Homem</td><td colspan="2">R$5.000,00</td></tr>
+          <tr><td>🎟️ Ingresso Mulher</td><td colspan="2">R$3.500,00</td></tr>
         </tbody>
       </table>
     </div>
@@ -195,7 +316,7 @@
             <tr>
               <th>Data / Hora</th>
               <th>Total</th>
-              <th>Gerência (30%)</th>
+              <th>Destino</th>
               <th>Status</th>
             </tr>
           </thead>
@@ -204,7 +325,10 @@
           </tbody>
         </table>
       </div>
-      <button class="btn btn-danger mt-3" onclick="confirmarLimpeza()">Limpar Logs</button>
+      <div class="d-flex gap-2">
+        <button class="btn btn-danger mt-3 flex-grow-1" onclick="confirmarLimpeza()">Limpar Logs</button>
+        <button class="btn btn-primary mt-3 flex-grow-1" onclick="exportarXMLSemanal()">Exportar Semanal (XML)</button>
+      </div>
     </div>
   </div>
 
@@ -246,10 +370,26 @@
     };
 
     function calcularTotal() {
+      // Verificar se todos os campos estão zerados
+      let todosZerados = true;
+      const campos = ['colete', 'c4', 'algema', 'capuz', 'mordaca', 'corda', 'tablet'];
+      
+      for (let campo of campos) {
+        if (parseInt(document.getElementById(campo).value) > 0) {
+          todosZerados = false;
+          break;
+        }
+      }
+
+      if (todosZerados) {
+        alert("Não é possível calcular: nenhum item foi adicionado!");
+        return;
+      }
+
       let a = document.getElementById("parceriaToggle").checked,
         b = {
           colete: a ? 3000 : 3500,
-          c4: a ? 2500 : 3000,
+          c4: a ? 4000 : 4500,
           algema: a ? 3000 : 3500,
           capuz: a ? 3000 : 3500,
           mordaca: a ? 5000 : 6000,
@@ -272,13 +412,39 @@
       // Salvar log
       salvarLog();
     }
+    
+    function calcularIngressos() {
+      const homens = parseInt(document.getElementById("homens").value) || 0;
+      const mulheres = parseInt(document.getElementById("mulheres").value) || 0;
+      
+      if (homens === 0 && mulheres === 0) {
+        alert("Não é possível calcular: nenhum ingresso foi adicionado!");
+        return;
+      }
+      
+      const total = (homens * 5000) + (mulheres * 3500);
+      document.getElementById("totalIngressos").innerText = "Total Ingressos: R$" + total.toLocaleString("pt-BR", { minimumFractionDigits: 2 });
+      
+      // Mostrar notificação
+      showInfoNotification(total, 0, true);
+      
+      // Salvar log de ingressos
+      salvarLogIngressos(total, homens, mulheres);
+    }
 
-    function showInfoNotification(valor, valor30) {
+    function showInfoNotification(valor, valor30, isIngresso = false) {
       const infoBox = document.getElementById("infoParceria");
       let valorFormatado = valor.toLocaleString("pt-BR", { minimumFractionDigits: 2 });
-      let valor30Formatado = valor30.toLocaleString("pt-BR", { minimumFractionDigits: 2 });
-
-      infoBox.innerText = `Total: R$${valorFormatado} | Vendedor Recebe (30%): R$${valor30Formatado}`;
+      
+      if (isIngresso) {
+        infoBox.innerText = `Total Ingressos: R$${valorFormatado}`;
+        infoBox.style.backgroundColor = "#6f42c1";
+      } else {
+        let valor30Formatado = valor30.toLocaleString("pt-BR", { minimumFractionDigits: 2 });
+        infoBox.innerText = `Total: R$${valorFormatado} | Vendedor Recebe (30%): R$${valor30Formatado}`;
+        infoBox.style.backgroundColor = "#0dcaf0";
+      }
+      
       infoBox.classList.add("show");
       setTimeout(() => infoBox.classList.remove("show"), 5000);
     }
@@ -288,12 +454,26 @@
       const row = table.insertRow(0);
       const dataHoraCell = row.insertCell(0);
       const totalCell = row.insertCell(1);
-      const gerenciaCell = row.insertCell(2);
+      const destinoCell = row.insertCell(2);
       const statusCell = row.insertCell(3);
 
       dataHoraCell.textContent = log.dataHora;
       totalCell.textContent = log.total;
-      gerenciaCell.textContent = log.gerencia;
+      destinoCell.textContent = log.destino;
+      statusCell.textContent = log.status;
+    }
+    
+    function addLogIngresso(log) {
+      const table = document.getElementById("logVendas");
+      const row = table.insertRow(0);
+      const dataHoraCell = row.insertCell(0);
+      const totalCell = row.insertCell(1);
+      const destinoCell = row.insertCell(2);
+      const statusCell = row.insertCell(3);
+
+      dataHoraCell.textContent = log.dataHora;
+      totalCell.textContent = log.total;
+      destinoCell.textContent = "Organização";
       statusCell.textContent = log.status;
     }
 
@@ -303,12 +483,35 @@
       const status = document.getElementById("parceriaToggle").checked ? "Com Parceria" : "Sem Parceria";
       const dataHora = new Date().toLocaleString();
 
-      const log = { dataHora, total, gerencia: valorVendedor, status };
+      const log = { 
+        dataHora, 
+        total: "R$" + total, 
+        destino: "Vendedor: R$" + valorVendedor, 
+        status 
+      };
       const logs = localStorage.getItem("logs") ? JSON.parse(localStorage.getItem("logs")) : [];
       logs.push(log);
       localStorage.setItem("logs", JSON.stringify(logs));
 
       addLog(log);
+    }
+    
+    function salvarLogIngressos(total, homens, mulheres) {
+      const dataHora = new Date().toLocaleString();
+      const status = `Ingressos (H:${homens}, M:${mulheres})`;
+      
+      const log = { 
+        dataHora, 
+        total: "R$" + total.toLocaleString("pt-BR", { minimumFractionDigits: 2 }), 
+        destino: "Organização", 
+        status 
+      };
+      
+      const logs = localStorage.getItem("logs") ? JSON.parse(localStorage.getItem("logs")) : [];
+      logs.push(log);
+      localStorage.setItem("logs", JSON.stringify(logs));
+
+      addLogIngresso(log);
     }
 
     function confirmarLimpeza() {
@@ -321,6 +524,67 @@
       document.getElementById("logVendas").innerHTML = "";
       const modal = bootstrap.Modal.getInstance(document.getElementById("modalConfirmacaoLimpeza"));
       modal.hide();
+    }
+
+    function exportarXMLSemanal() {
+      const logs = localStorage.getItem("logs") ? JSON.parse(localStorage.getItem("logs")) : [];
+      
+      // Criar array com os últimos 7 dias
+      const diasSemana = [];
+      for (let i = 6; i >= 0; i--) {
+        const data = new Date();
+        data.setDate(data.getDate() - i);
+        diasSemana.push(data.toLocaleDateString('pt-BR'));
+      }
+
+      // Criar XML
+      let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+      xml += '<relatorio_semanal periodo="' + diasSemana[0] + ' a ' + diasSemana[6] + '">\n';
+      
+      // Adicionar cabeçalho com dias da semana
+      xml += '  <dias>\n';
+      diasSemana.forEach(dia => {
+        xml += '    <dia>' + dia + '</dia>\n';
+      });
+      xml += '  </dias>\n';
+      
+      // Adicionar vendas organizadas por dia
+      xml += '  <vendas>\n';
+      
+      diasSemana.forEach(dia => {
+        const vendasDia = logs.filter(log => log.dataHora.includes(dia));
+        
+        xml += '    <venda_dia data="' + dia + '">\n';
+        
+        if (vendasDia.length === 0) {
+          xml += '      <sem_vendas>Nenhuma venda registrada</sem_vendas>\n';
+        } else {
+          vendasDia.forEach(venda => {
+            xml += '      <transacao>\n';
+            xml += '        <hora>' + venda.dataHora.split(' ')[1] + '</hora>\n';
+            xml += '        <total>' + venda.total + '</total>\n';
+            xml += '        <destino>' + venda.destino + '</destino>\n';
+            xml += '        <status>' + venda.status + '</status>\n';
+            xml += '      </transacao>\n';
+          });
+        }
+        
+        xml += '    </venda_dia>\n';
+      });
+      
+      xml += '  </vendas>\n';
+      xml += '</relatorio_semanal>';
+
+      // Criar blob e fazer download
+      const blob = new Blob([xml], { type: 'application/xml' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'relatorio_semanal_' + new Date().toISOString().split('T')[0] + '.xml';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
     }
   </script>
 
